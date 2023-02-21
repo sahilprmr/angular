@@ -1,0 +1,33 @@
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.numinput{
+    border:1px solid blue;
+    padding: 5%;
+    margin:10% auto;
+}
+button{
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 80px;
+}
+input{
+  width: 200px;
+  text-align: center;
+  }
+  .row{
+    margin-left:650px;
+    margin-top: 50px;
+  }
+.btn.btn-danger{
+    margin-left: 86px;
+}
+.container-md{
+    border: 1px solid blue;
+    padding-bottom: 10%;
+    align-content: center;
+    margin-top: 150px;
+}

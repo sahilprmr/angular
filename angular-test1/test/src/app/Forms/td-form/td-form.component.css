@@ -1,0 +1,13 @@
+h1{
+    text-align: center;
+    
+}
+.btns{
+    display: flex;
+    justify-content:space-evenly;
+}
+.hobby{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}

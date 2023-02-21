@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>GENERAL INFO</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div id="user-data">
+          <div class="form-row" (keydown)="input_fullname(fname,mname,lname)">
+            <!-- Firstname Input -->
+            <label for="firstname">Firstname</label>
+            <input type="text" id="fname" class="form-control" ngModel name="firstname" required #fname="ngModel">
+            <span *ngIf="!fname.valid && fname.touched" class="help-block">Please Enter a Valid Firstname!</span>
+            <!-- Middlename Input -->
+            <label for="middlename">Middlename</label>
+            <input type="text" id="mname" class="form-control" ngModel name="middlename" required #mname="ngModel">
+            <span *ngIf="!mname.valid && mname.touched" class="hlep-block">Please Enter a Valid Middlename!</span>
+            <!-- LastName Input -->
+            <label for="lastname">Lastname</label>
+            <input type="text" id="lname" class="form-control" ngModel name="lastname" required #lname="ngModel">
+            <span *ngIf="!lname.valid && lname.touched" class="hlep-block">Please Enter a Valid Lastname!</span>
+
+            <textarea class=" form-control" rows="2" style="margin-top:10px" [(ngModel)]="fullname"
+              placeholder="FullName Goes Here (Edit)">{{fullname}}
+
+                  </textarea>
+            <!-- <p *ngIf="!f.valid">Please Enter Valid Username!</p> -->
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio" *ngFor="let gender of genders">
+              <label>
+                <input type="radio" name="gender" ngModel [value]="gender"> {{gender}}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <select id="company" class="form-control" ngModel name="company" [ngModel]="defaultOption ">
+            <option value="TechExtensor">TechExtensor</option>
+            <option value="Google">Google</option>
+            <option value="yahoo">yahoo</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Prixma">Prixma</option>
+          </select>
+        </div>
+        <div class="formgroup hobby">
+          <label>HOBBIES</label>
+
+          <input type="checkbox" name="sing" id="h_sing">
+          <label for="sing" >Singing</label>
+
+          <input type="checkbox" name="dance" id="h_dance">
+          <label for="dance">Dancing</label>
+
+          <input type="checkbox" name="swim" id="h_swim">
+          <label for="swim">Swiming</label>
+
+          <input type="checkbox" name="read"id="h_read">
+          <label for="read">Reading</label>
+
+          <input type="checkbox"name="coin" id="h_coin">
+          <label for="coin">Coin collection</label>
+
+        </div>
+        <div class="col-md-12 btns">
+          <button [disabled]="!f.valid" class="btn btn-primary" type="submit" routerLink="/ReactForm"
+            routerLinkActive="active" ariaCurrentWhenActive="page">Submit </button>
+          <button [disabled]="!f.valid" class="btn btn-danger" type="clear">Clear</button>
+          <button [disabled]="!f.valid" class="btn btn-primary" type="back" routerLink="/" routerLinkActive="active"
+            ariaCurrentWhenActive="page">Back</button>
+        </div>
+      </form>
+      <!-- <p>new Form Test</p>
+        <app-sign-in-form></app-sign-in-form> -->
+    </div>
+  </div>
+</div>
