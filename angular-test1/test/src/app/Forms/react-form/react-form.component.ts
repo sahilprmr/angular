@@ -10,8 +10,9 @@ type NewType = FormGroup;
 })
 export class ReactFormComponent implements OnInit{
   udataform:FormGroup;
-  @Input()
+
   genders =['Male','Female'];
+  defaultOption = 'Dancing';
   ngOnInit(){
     this.udataform = new FormGroup({
     'fname' :new FormControl(),
@@ -23,9 +24,10 @@ export class ReactFormComponent implements OnInit{
     'swiming':new FormControl(),
     'singing':new FormControl(),
     'football':new FormControl(),
-    'submit':new FormControl(),
-    'reset':new FormControl(),
-    'clear':new FormControl(),
+    // 'submit':new FormControl(),
+    // 'reset':new FormControl(),
+    // 'clear':new FormControl(),
+    'company':new FormControl(),
     'gaming':new FormControl(),
 
   });

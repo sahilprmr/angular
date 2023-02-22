@@ -1,5 +1,5 @@
-import { Component, Input, Output } from '@angular/core';
-import { OutletContext } from '@angular/router';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, OutletContext } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
 
@@ -8,8 +8,9 @@ import { DataService } from 'src/app/data.service';
   templateUrl: './td-form.component.html',
   styleUrls: ['./td-form.component.css']
 })
-export class TdFormComponent {
+export class TdFormComponent implements OnInit {
 
+  id = '';
   genders = ['Female', 'Male'];
   fullname = '';
   fname = '';
@@ -18,10 +19,19 @@ export class TdFormComponent {
   defaultOption = 'Dancing';
   // @Input()
   // company =['TechExtensor','Google','Facebook','Simform','Yahoo','Instagram'];
+
+  constructor(private route: ActivatedRoute){}
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+      
+  }
+
+
   onSubmit() {
 
   }
-  constructor(private formdata: DataService) { }
+  // constructor(private formdata: DataService) { }
   input_fullname(fname: any, mname: any, lname: any) {
     this.fname = fname;
     this.lname = lname;

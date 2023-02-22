@@ -64,6 +64,8 @@
         </div>
         <div class="col-md-12 btns">
           <button [disabled]="!f.valid" class="btn btn-primary" type="submit" routerLink="/ReactForm"
+          queryParamsHandling="preserve"
+          
             routerLinkActive="active" ariaCurrentWhenActive="page" (click)="onSubmit()">Submit </button>
           <button [disabled]="!f.valid" class="btn btn-danger" type="clear" (click)="OnClear()">Clear</button>
           <button [disabled]="!f.valid" class="btn btn-primary" type="back" routerLink="/" routerLinkActive="active"
