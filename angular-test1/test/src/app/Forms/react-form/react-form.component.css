@@ -1,0 +1,14 @@
+.radio{
+    display: flex;
+    justify-content:baseline;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    text-align: center;
+    
+}
+.hob label {
+    margin-left: 5%;
+}

@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: HomepageComponent,pathMatch:'full' },
   { path: 'TdForm', component: TdFormComponent },
   { path: 'ReactForm', component: ReactFormComponent },
+  { path: 'id', component: TdFormComponent },
 ];
 
 

@@ -4,20 +4,59 @@
             <div>
                 <h1>Reactive Angular Form</h1>
             </div>
-            <form [formGroup]="udataform">
+            <form [formGroup]="udataform" class="form-group" (ngSubmit)="onSubmit()">
                 <label for="fname">FirstName: </label>
-                <input id="fname" type="text" formControlName="fname">
+                <input id="fname" class="form-control" type="text" formControlName="fname">
 
                 <label for="fname">MIddleName: </label>
-                <input id="fname" type="text" formControlName="mname">
+                <input id="fname" type="text" class="form-control" formControlName="mname">
 
                 <label for="fname">LastName: </label>
-                <input id="fname" type="text" formControlName="lname">
-                
+                <input id="fname" type="text" class="form-control" formControlName="lname">
+
                 <label for="fullname_text">TextArea </label>
-                <textarea id="fullname_text" type="text" formControlName="fulltextarea"> </textarea>
+                <textarea id="fullname_text" 
+                            class="form-control" 
+                            type="text"
+                            formControlName="fulltextarea"
+                            > </textarea>
+
                 <div class="form-group">
-                    div.                
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio" *ngFor="let gender of genders">
+                        <label for="female">
+                            <input type="radio" name="gender" formControlName="gender" id="female">{{gender}}
+                        </label>
+                        
+                    </div>
+                    <div>
+                        <label>Hobby</label>
+                        <div class="hob">
+                            <label>
+                                <input type="checkbox" name="dancer" formControlName="dancing">Dancing
+                            </label>
+                            <label>
+                                <input type="checkbox" name="singer" formControlName="singing">Singing
+                            </label>
+                            <label>
+                                <input type="checkbox" name="swimer" formControlName="swiming">Swiming
+                            </label>
+                            <label>
+                                <input type="checkbox" name="player" formControlName="football">Football
+                            </label>
+                            <label>
+                                <input type="checkbox" name="gamer" formControlName="gaming">Gaming
+                            </label>
+                        </div>
+                        <div class="btns btn-group col-md-5">
+                            <button type="submit" name="submit" class="btn btn-primary btn-sm" formControlName="submit">SUBMIT</button>
+                            <button type="button" name="reset" class="btn btn-primary btn-sm" formControlName="reset">RESET</button>
+                            <button type="button" name="add" class="btn btn-primary btn-sm" formControlName="fetch">FETCH DATA</button>
+                            <button type="button" name="clear" class="btn btn-danger btn-sm" formControlName="clear">CLEAR</button>
+                        </div>
+                    </div>
                 </div>
             </form>
 

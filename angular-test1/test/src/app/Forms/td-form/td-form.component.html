@@ -18,7 +18,7 @@
             <input type="text" id="lname" class="form-control" ngModel name="lastname" required #lname="ngModel">
             <span *ngIf="!lname.valid && lname.touched" class="hlep-block">Please Enter a Valid Lastname!</span>
 
-            <textarea class=" form-control" rows="2" style="margin-top:10px" [(ngModel)]="fullname"
+            <textarea class=" form-control" rows="2" style="margin-top:10px" [(ngModel)]="fullname" name="fulltextarea"
               placeholder="FullName Goes Here (Edit)">{{fullname}}
 
                   </textarea>
@@ -47,7 +47,7 @@
           <label>HOBBIES</label>
 
           <input type="checkbox" name="sing" id="h_sing">
-          <label for="sing" >Singing</label>
+          <label for="sing">Singing</label>
 
           <input type="checkbox" name="dance" id="h_dance">
           <label for="dance">Dancing</label>
@@ -55,17 +55,17 @@
           <input type="checkbox" name="swim" id="h_swim">
           <label for="swim">Swiming</label>
 
-          <input type="checkbox" name="read"id="h_read">
+          <input type="checkbox" name="read" id="h_read">
           <label for="read">Reading</label>
 
-          <input type="checkbox"name="coin" id="h_coin">
+          <input type="checkbox" name="coin" id="h_coin">
           <label for="coin">Coin collection</label>
 
         </div>
         <div class="col-md-12 btns">
           <button [disabled]="!f.valid" class="btn btn-primary" type="submit" routerLink="/ReactForm"
-            routerLinkActive="active" ariaCurrentWhenActive="page">Submit </button>
-          <button [disabled]="!f.valid" class="btn btn-danger" type="clear">Clear</button>
+            routerLinkActive="active" ariaCurrentWhenActive="page" (click)="onSubmit()">Submit </button>
+          <button [disabled]="!f.valid" class="btn btn-danger" type="clear" (click)="OnClear()">Clear</button>
           <button [disabled]="!f.valid" class="btn btn-primary" type="back" routerLink="/" routerLinkActive="active"
             ariaCurrentWhenActive="page">Back</button>
         </div>
